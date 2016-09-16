@@ -10,7 +10,7 @@ import config
 ## This functions read the files in python, resample them, plot them and builds a new data frame with sumary statistics for each measurement
 
 def convert_mat(f,resample_size):
-    """ This function reads a file , resample the data to ms and returns a dataframe"""
+    """ This function reads a file , resamples the data to ms and returns a dataframe"""
 
     # load .mat file
     mat = scipy.io.loadmat(f)
