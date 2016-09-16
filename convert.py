@@ -5,7 +5,7 @@ from highcharts import Highchart
 from scipy.signal import resample
 import config
 
-## Couple of functions to analise the data from the Kaggle competition for seizure prediction (https://www.kaggle.com/c/melbourne-university-seizure-prediction)
+## Couple of functions to analyse the data from the Kaggle competition for seizure prediction (https://www.kaggle.com/c/melbourne-university-seizure-prediction)
 ## data input are Matlab type files that consist of a group of time series measurements from EEG signals
 ## This functions read the files in python, resample them, plot them and builds a new data frame with sumary statistics for each measurement
 
