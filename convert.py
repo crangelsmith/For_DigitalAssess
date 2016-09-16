@@ -38,13 +38,6 @@ def main():
     ## run over all files with '*.mat'
     file_type = '*.mat'
 
-    # plotting setup
-    charts = Highchart()
-    options = {'chart': {'type': 'line'}, 'title': {'text': 'test'},
-               'xAxis': {'type': 'float', 'title': {'enabled': True, 'text': 'time (ms)'}},
-               'yAxis': {'type': 'int', 'title': {'enabled': True, 'text': 'EEG signal'}}}
-
-    charts.set_dict_options(options)
 
     list_dict = []
     target_list = []
@@ -64,6 +57,14 @@ def main():
         else:
             target = 0
 
+        # plotting setup
+        charts = Highchart()
+        options = {'chart': {'type': 'line'}, 'title': {'text': 'test'},
+                       'xAxis': {'type': 'float', 'title': {'enabled': True, 'text': 'time (ms)'}},
+                       'yAxis': {'type': 'int', 'title': {'enabled': True, 'text': 'EEG signal'}}}
+
+        charts.set_dict_options(options)
+
         values_dict ={}
         # get summary statistics of each channel in the EGG, save them to a list of dictionaries
         for i in df.columns:
@@ -77,6 +78,7 @@ def main():
             values_dict[i + '_kurtosis'] = df[i].kurtosis
             values_dict[i + '_skew'] = df[i].skew
             values_dict[i + '_var'] = df[i].var
+
 
             # plot each channel
             data = df[i].tolist()
